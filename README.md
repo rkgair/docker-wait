@@ -25,11 +25,11 @@ waiting for github.com:443  .  up!
 Everything is up
 ```
 
-By default each connection attempt will bail after 30 seconds. You can specify an override using the `TIMEOUT` env variable:
+By default each connection attempt will bail after 30 seconds. You can specify how long to wait (in seconds) using the `TIMEOUT` env variable:
 
 ```shell
-$ docker run -e TARGETS=github.com:5432 waisbrot/wait
-waiting for github.com:5432  ...............................  ERROR: unable to connect
+$ docker run -e TARGETS=github.com:5432 -e TIMEOUT=2 waisbrot/wait
+waiting for github.com:5432  ..  ERROR: unable to connect
 ```
 
 If any TARGET times out, the `wait` container immediately exits with status code 1
