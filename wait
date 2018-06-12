@@ -41,7 +41,7 @@ do
   if [ "$seconds" -lt "$timeout" ]; then
     echo "  up!"
   else
-    echo "  ERROR: unable to connect" >&2
+    echo "  ERROR: unable to connect $host $port in last $timeout seconds" >&2
     exit 1
   fi
 done
